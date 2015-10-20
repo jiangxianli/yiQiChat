@@ -100,4 +100,4 @@
 ##5.个人设置
     可以设置自己的头像及个人资料等
 #项目试玩
-![](http://chat.jiangxianli.com/assets/images/qrcode.png =150x)
+[一起玩](http://chat.jiangxianli.com)
