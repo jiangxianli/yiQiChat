@@ -6,6 +6,7 @@
     "angular": "~1.4.0",
     "angular-animate": "~1.4.0",
     "angular-bootstrap": "~0.13.0",
+    "angular-chart.js": "~0.7.3",
     "angular-cookies": "~1.4.0",
     "angular-datepicker": "~1.0.12",
     "angular-file-upload": "~2.1.4",
