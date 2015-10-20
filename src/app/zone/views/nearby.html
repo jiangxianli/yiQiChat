@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">附近</div>
+    <div class="right">
+        <a class="uk-icon-ellipsis-v icon" ></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="nearby">
+        <div class="item" data-ng-repeat="customer in customers" ui-sref="customers.detail({uuid:customer.uuid})">
+            <img ng-src="{{customer.image_url}}">
+            <div class="account">
+                <span>{{customer.user_name ? customer.user_name : customer.user_num}}</span>
+                <b>{{customer | distance : user}}</b>
+
+            </div>
+            <div class="intro">
+                {{customer.intro}}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="uk-modal loadingModal" data-uk-modal="{center:true}">
+        <div class="uk-modal-dialog">
+            <div class="modal-dialog">
+                <i class="uk-icon-spin uk-icon-refresh"></i>
+                <b>{{tipInfo}}</b>
+            </div>
+
+        </div>
+    </div>
+
+</div>

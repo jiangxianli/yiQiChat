@@ -1,0 +1,25 @@
+<div class="footer">
+    <div class="uk-grid">
+        <div class="grid-item uk-width-1-4" ui-sref="messages" ui-sref-active="active">
+            <span class="icon uk-icon-quote-left " >
+                <span class="am-badge am-badge-danger am-round circle" ng-show="totalUnreadNum > 0">{{totalUnreadNum}}</span>
+            </span>
+            <em>消息</em>
+        </div>
+        <div class="grid-item uk-width-1-4" ui-sref="friends" ui-sref-active="active">
+            <span class="icon uk-icon-group">
+                <span class="am-badge am-badge-danger am-round circle" ng-show="totalNewApply > 0">{{totalNewApply}}</span>
+            </span>
+            <em>朋友</em>
+        </div>
+        <div class="grid-item uk-width-1-4" ui-sref="moods" ui-sref-active="active">
+            <span class="icon uk-icon-paw"></span>
+            <em>广场</em>
+        </div>
+        <div class="grid-item uk-width-1-4" ui-sref="zone" ui-sref-active="active">
+            <span class="icon uk-icon-user "></span>
+            <em>我</em>
+        </div>
+
+    </div>
+</div>

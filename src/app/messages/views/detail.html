@@ -1,0 +1,48 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  ui-sref="messages"></a>
+    </div>
+    <div class="center">微信</div>
+    <div class="right">
+        <a class="uk-icon-user icon" ui-sref="customers.detail({uuid:friend.uuid})"></a>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="message-detail">
+        <ul>
+            <li class="time">7月20号 17:20</li>
+            <li class="{{msg.from == friend.id ? 'other':'owner'}}" data-ng-repeat="msg in messages">
+                <div class="item">
+                    <img ng-src="{{ msg.from_img_url}}" />
+                    <div class="detail">
+                        <div class="arrow"></div>
+                        <div class="status" ng-if="msg.from != friend.id ">{{msg.status}}</div>
+                        <div class="row">{{msg.content}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer" >
+
+    <div class="msg-box">
+        <div class="uk-grid">
+            <div class="uk-width-1-10">
+                <i class="icon uk-icon-microphone"></i>
+            </div>
+            <div class="uk-width-7-10">
+                <input type="text" class="content" placeholder="回复：" ng-model="content">
+            </div>
+            <div class="uk-width-1-10">
+                <i class="icon uk-icon-plus-square-o" ng-click="sendTextMessage()"></i>
+            </div>
+            <div class="uk-width-1-10">
+                <i class="icon uk-icon-smile-o"></i>
+            </div>
+        </div>
+    </div>
+</div>

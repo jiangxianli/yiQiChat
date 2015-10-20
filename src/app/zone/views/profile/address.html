@@ -1,0 +1,56 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">选择地区</div>
+
+</div>
+<div class="content ">
+
+    <div class="profile-detail">
+
+        <div class="address">
+            <span class="title"> 当前位置</span>
+            <div class="block-wrapper">
+                <div class="block" ng-click="setMapLocation()">
+                    <i class="icon uk-icon-map-marker"></i>
+                    <span class="text">{{location}}</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="address">
+            <span class="title"> 全部地区</span>
+            <div class="block-wrapper">
+                <div class="block">
+                    <span class="text">中国 广东</span>
+                    <span class="marker">已选地区</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="address" ng-show="cities.length <= 0">
+            <div class="block-wrapper" >
+                <div class="block" data-ng-repeat="province in provinces" ng-click="getCitys(province)">
+                    <span class="text">{{province}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="address" ng-show="cities.length > 0">
+            <div class="block-wrapper" >
+                <div class="block" data-ng-repeat="city in cities" ng-click="setAddress(city)">
+                    <span class="text">{{city}}</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

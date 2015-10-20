@@ -1,0 +1,30 @@
+<!-- Gallery -->
+<ul data-am-widget="gallery" class="am-gallery am-avg-sm-3 am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{pureview:{weChatImagePreview: false}}">
+    <li data-ng-repeat="image in images">
+        <div class="am-gallery-item" ng-click="openPreviewWindow($index)">
+            <img ng-src="{{image.url}}" />
+        </div>
+    </li>
+</ul>
+<div class="am-pureview am-pureview-bar-active {{ openPreview == true ? 'am-active': ''}}"  style="display: block">
+    <ul class="am-pureview-slider">
+        <li  class=" {{ $index == cur ? 'am-active' : ''}}" data-ng-repeat="image in images">
+            <div class="pinch-zoom-container" >
+                <div class="am-pinch-zoom am-pureview-loaded">
+                    <img ng-src="{{image.url}}"  class="am-img-loaded"></div>
+            </div>
+        </li>
+    </ul>
+    <ul class="am-pureview-direction">
+        <li class="am-pureview-prev"><a ng-click="openPreviewWindow(previous)"></a> </li>
+        <li class="am-pureview-next"><a ng-click="openPreviewWindow(next)"></a> </li>
+    </ul>
+    <div class="am-pureview-bar am-active">
+        <div class="am-pureview-counter"><span class="am-pureview-current">{{cur+1}}</span> / <span class="am-pureview-total">{{size}}</span></div>
+    </div>
+
+    <div class="am-pureview-actions am-active">
+        <a  class="am-icon-chevron-left" ng-click="closePreviewWindow()">
+        </a>
+    </div>
+</div>

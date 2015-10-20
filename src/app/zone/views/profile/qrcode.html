@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">我的二维码</div>
+
+</div>
+<div class="content ">
+
+    <div class="profile-detail">
+
+        <div class="qrcode">
+            <img src="{{user.qrcode}}" ng-show="user.qrcode" >
+            <span class="tip"> 扫描二维码，加我为好友吧！</span>
+        </div>
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

@@ -1,0 +1,55 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">详细资料</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="zone">
+
+        <div class="top-block" ui-sref="zone.profile">
+
+            <img ng-src="{{ customer.image_url }}" >
+
+            <div class="account-info">
+                <div class="top">
+                    <span>{{user.remark}}</span><em class=" icon {{ user.sex ? 'uk-icon-mars' : 'uk-icon-venus'}}" ></em>
+                </div>
+                <span class="account-id">手机号：{{user.mobile}}</span>
+
+            </div>
+
+        </div>
+
+        <div class="block">
+            <div class="alias" ui-sref="zone.mood.create" >
+                <span class="icon uk-icon-camera"></span>
+                <span>相册</span>
+            </div>
+            <div class="alias" ui-sref="zone.nearby">
+                <span class="icon uk-icon-paw"></span>
+                <span>附近的人</span>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="alias">
+                <span class="icon uk-icon-gear"></span>
+                <span>设置</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+
+            <button class="logout" ng-click="logout()">退出系统</button>
+        </div>
+
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

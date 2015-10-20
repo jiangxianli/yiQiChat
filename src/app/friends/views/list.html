@@ -1,0 +1,68 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">联系人</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="friends">
+
+        <ul class="ul-list">
+            <li class="new" ui-sref="friends.add">
+                <span class="uk-icon-user-plus icon"></span>
+                <b>新的朋友</b>
+                <span class="am-badge am-badge-danger am-round circle" ng-show="totalNewApply > 0">{{totalNewApply}}</span>
+            </li>
+        </ul>
+
+        <div class="sort-by">
+            <!--<h4>A</h4>-->
+            <ul>
+                <li data-ng-repeat="friend in friends">
+                    <div class="item" ui-sref="customers.detail({uuid:friend.uuid})">
+
+                        <img src="{{friend.image_url}}">
+                        <span>{{friend.user_name ? friend.user_name : friend.user_num}}</span>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <!--<div class="sort-by">-->
+            <!--<h4>B</h4>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<div class="item">-->
+
+                        <!--<img src="/assets/images/touxiang.png">-->
+                        <!--<span>Brace</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<div class="item">-->
+
+                        <!--<img src="/assets/images/touxiang.png">-->
+                        <!--<span>Grace</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+        <!--</div>-->
+    </div>
+
+    <div class="uk-modal loadingModal" data-uk-modal="{center:true}">
+        <div class="uk-modal-dialog">
+            <div class="modal-dialog">
+                <i class="uk-icon-spin uk-icon-refresh"></i>
+                <b>{{tipInfo}}</b>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

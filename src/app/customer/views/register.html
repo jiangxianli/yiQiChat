@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon" href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">注册</div>
+</div>
+<div class="content">
+    <div class="login-form">
+
+        <div class="logo">
+            <i class="uk-icon-wechat"></i>
+            <span>一起聊</span>
+        </div>
+
+        <div class="form-group">
+            <i class="input-icon uk-icon-user"></i>
+            <input type="text" placeholder="请输入手机号" data-ng-model="account"/>
+        </div>
+
+        <div class="form-group">
+            <i class="input-icon uk-icon-lock"></i>
+            <input type="password" placeholder="请输入密码" data-ng-model="password"/>
+        </div>
+
+        <div class="form-group">
+
+            <button class="uk-button uk-button-large uk-width-1-1 login-btn" ng-click="register()"  ng-disabled="clicked">{{ clicked ? '注册中...':'注册'}}</button>
+
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <a class="more" ui-sref="users.login">登录</a>
+</div>
+
+

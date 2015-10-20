@@ -1,0 +1,45 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">广场</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="moods">
+
+        <div class="item" data-ng-repeat="mood in moods">
+
+            <div class="top-block" ui-sref="customers.detail({uuid:mood.customer_uuid})" >
+                <img ng-src="{{mood.image_url}}" />
+                <span>{{mood.customer_name}}</span>
+                <span class="icon"></span>
+            </div>
+            <div class="content">
+                {{mood.content}}
+            </div>
+
+            <div gallery ng-model="mood.images" ></div>
+            <div class="location" ng-if="mood.location">
+                <i class="icon uk-icon-map-marker"></i> {{mood.location}}
+            </div>
+            <div class="actions">
+                <span >
+                    <i class="icon uk-icon-thumbs-o-up" ng-if="!mood.is_praised " ng-click="praise(mood)"></i>
+                    <i class="icon uk-icon-thumbs-up" ng-if="mood.is_praised " ></i>
+                    <em>{{mood.praise_num}}</em>
+                </span>
+                <span ui-sref="moods.detail({uuid:mood.u_num})" >
+                    <i class="icon uk-icon-commenting-o"></i>
+                    <em>{{mood.comment_num}}</em>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

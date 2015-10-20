@@ -1,0 +1,94 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">详细资料</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="zone">
+
+        <div class="block profile">
+            <div class="alias">
+                <span class="title">头像</span>
+                <span class="text right">
+                    <img ng-src="{{ user.image_url}}">
+                    <input type="file" ng-model="file" ngf-select="updateCustImg($file)" class="file" accept="image/*">
+                </span>
+            </div>
+            <div class="alias" ui-sref="zone.profile.username">
+                <span class="title">昵称</span>
+                <span class="text right">{{user.user_name ? user.user_name : '未设置'}}</span>
+            </div>
+            <div class="alias" >
+                <span class="title">手机号</span>
+                <span class="text right">{{user.mobile}}</span>
+            </div>
+            <div class="alias" >
+                <span class="title">畅聊号</span>
+                <span class="text right">{{user.user_num}}</span>
+            </div>
+            <div class="alias" ui-sref="zone.profile.qrcode" >
+                <span class="title">二维码名片</span>
+                <span class="text right">
+                    <i class="uk-icon-qrcode icon"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="block profile">
+            <div class="alias" ng-click="openSexSelect()">
+                <span class="title">性别</span>
+                <span class="text right">{{user.sex ? '男' : '女'}}</span>
+            </div>
+            <div class="alias" ui-sref="zone.profile.address">
+                <span class="title">地址</span>
+                <span class="text right" ng-if="user.address">{{user.address.province}} {{user.address.city}}</span>
+                <span class="text right" ng-if="!user.address">未设置</span>
+            </div>
+            <div class="alias" ui-sref="zone.profile.intro" >
+                <span class="title">个人简介</span>
+                <span class="text right intro">
+                    {{ user.intro ? user.intro : '未设置'}}
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="uk-modal loadingModal" data-uk-modal="{center:true}">
+        <div class="uk-modal-dialog">
+            <div class="modal-dialog">
+                <i class="uk-icon-spin uk-icon-refresh"></i>
+                <b>{{tipInfo}}</b>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="uk-modal sexSelect" data-uk-modal="{center:true}">
+        <div class="uk-modal-dialog">
+            <div class="modal-dialog">
+                <ul>
+                    <li ng-click="setSex(true)">
+                        <span class="text">男</span>
+                        <span class="icon uk-icon-check" ng-show="user.sex"></span>
+                    </li>
+                    <li ng-click="setSex(false)">
+                        <span class="text">女</span>
+                        <span class="icon uk-icon-check" ng-show="!user.sex"></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

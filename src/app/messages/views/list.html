@@ -1,0 +1,42 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-user icon"  data-uk-offcanvas="{target:'#slider-menu'}"></a>
+    </div>
+    <div class="center">微信</div>
+    <div class="right">
+        <a class="uk-icon-user-plus icon" ui-sref="friends.add"></a>
+    </div>
+</div>
+<div class="content">
+    <div class="form-search">
+        <div class="over">
+            <i class="icon uk-icon-search"></i>
+            <span>搜索</span>
+        </div>
+        <div class="uk-form-icon">
+            <i class="uk-icon-search"></i>
+            <input type="text">
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="messages">
+        <ul>
+            <li data-ng-repeat="msg in messages">
+                <div class="item" ui-sref="messages.detail({id: msg.to == user.id ? msg.from : msg.to })">
+                    <img ng-src="{{msg.to_img_url}}" ng-if="msg.from == user.id"/>
+                    <img ng-src="{{msg.from_img_url}}" ng-if="msg.from != user.id"/>
+                    <div class="message">
+                        <span class="name">{{msg.remark}}</span>
+                        <span class="detail">{{msg.content}}</span>
+                        <span class="am-badge am-badge-danger am-round circle" ng-show="msg.unreadNum > 0">{{msg.unreadNum}}</span>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

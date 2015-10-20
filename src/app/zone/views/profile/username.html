@@ -1,0 +1,23 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">修改昵称</div>
+    <div class="right">
+        <button class="update-btn" ng-click="setUserName()">确定</button>
+    </div>
+</div>
+<div class="content ">
+
+    <div class="profile-detail">
+
+        <div class="form-control">
+            <input class="text" placeholder="请输入昵称" data-ng-model="user.user_name">
+
+        </div>
+
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

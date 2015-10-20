@@ -1,0 +1,76 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">详细资料</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="friend-detail">
+
+        <div class="top-block">
+
+            <img ng-src="{{ customer.image_url }}" >
+
+            <div class="account-info">
+                <div class="top">
+                    <span>{{customer.remark}}</span><em class="{{ customer.sex ? 'uk-icon-mars' : 'uk-icon-venus'}} icon"></em>
+                </div>
+                <span class="account-id">畅聊号：{{customer.user_num}}</span>
+
+            </div>
+
+        </div>
+
+        <div class="block" ng-if="customer.is_friend" ui-sref="friends.setRemark({id:customer.id})">
+            <div class="alias">设置备注</div>
+        </div>
+
+        <div class="block">
+            <table class="detail">
+                <tr>
+                    <td>
+                        <label>地区</label>
+                    </td>
+                    <td>
+                        <div class="text" ng-if="customer.address">{{customer.address.province}} {{customer.address.city}}</div>
+                        <div class="text" ng-if="!customer.address">未知</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>个人相册</label>
+                    </td>
+                    <td>
+                        <div class="photos">
+                            <div class="item">
+                                <img src="/assets/images/touxiang.png" >
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/touxiang.png" >
+                            </div>
+                            <div class="item">
+                                <img src="/assets/images/touxiang.png" >
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="btn-group">
+
+            <!--<button class="send-msg">通过验证</button>-->
+
+            <button class="send-msg" ui-sref="messages.detail({id:customer.id})" ng-if="customer.is_friend">发消息</button>
+
+            <button class="send-msg" ng-click="apply(customer.easemob_username)" ng-if="!customer.is_friend">加好友</button>
+        </div>
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

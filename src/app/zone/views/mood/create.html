@@ -1,0 +1,53 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">详细资料</div>
+    <div class="right">
+        <button class="update-btn" ng-click="create()">发送</button>
+    </div>
+</div>
+<div class="content">
+
+    <div class="zone">
+
+        <div class="block mood-create">
+
+            <textarea placeholder="这一刻的想法..." data-ng-model="mood.content"></textarea>
+            <ul class="row">
+                <li data-ng-repeat="image in images">
+                    <img ng-src="{{image.url}}" />
+                </li>
+                <li class="upload">
+                    <input type="file" ng-model="file" ngf-select="uploadImg($file)" class="file" accept="image/*">
+                </li>
+
+                <div class="alias" ng-click="setLocation()">
+                    <span class="icon uk-icon-map-marker"></span>
+                    <span class="text">{{mood.location ? mood.location : '所在位置'}}</span>
+                </div>
+            </ul>
+
+        </div>
+
+        <div class="block mood-create">
+                <div class="alias" ng-click="mood.hidden = !mood.hidden">
+                    <span class="icon uk-icon-globe"></span>
+                    <span class="text">谁可以看</span>
+                    <span class="mark">{{mood.hidden ? '隐私':'公开'}}</span>
+                </div>
+            </ul>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

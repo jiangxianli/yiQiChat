@@ -1,0 +1,76 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon" href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">心情</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="moods">
+
+        <div class="item">
+
+            <div class="top-block" ui-sref="customers.detail({uuid:mood.customer_uuid})">
+                <img ng-src="{{mood.image_url}}"/>
+                <span>{{mood.customer_name}}</span>
+            </div>
+            <div class="content">
+                {{mood.content}}
+            </div>
+            <div gallery ng-model="mood.images" ></div>
+
+            <div class="location" ng-if="mood.location">
+                <i class="icon uk-icon-map-marker"></i> {{mood.location}}
+            </div>
+            <div class="actions">
+                <span >
+                    <i class="icon uk-icon-thumbs-o-up" ng-if="!mood.is_praised " ng-click="praise(mood)"></i>
+                    <i class="icon uk-icon-thumbs-up" ng-if="mood.is_praised " ></i>
+                    <em>{{mood.praise_num}}</em>
+                </span>
+                <span ng-click="comment()">
+                    <i class="icon uk-icon-commenting-o"></i>
+                    <em>{{mood.comment_num}}</em>
+                </span>
+            </div>
+        </div>
+
+        <div class="comment-list">
+            <ul class="father">
+                <li data-ng-repeat="comment in comments">
+                    <div class="comment" ng-click="reply(mood,comment)">
+                        <img class="am-circle" ng-src="{{comment.image_url}}" ui-sref="customers.detail({uuid:comment.customer_uuid})" />
+                        <div class="top-block">
+                            <span class="text">{{comment.remark}}</span>
+                            <span class="date">{{comment.created_at | format_date }}</span>
+                        </div>
+
+                        <div class="content"><label ui-sref="customers.detail({uuid:comment.father_uuid})" ng-if="comment.father_id > 0">@{{comment.father_remark}}</label> {{comment.content}}</div>
+                    </div>
+
+                    <!--<ul class="son" data-ng-repeat="son in comment.son_comments">-->
+                        <!--<li>-->
+                            <!--<div class="comment">-->
+                                <!--<img class="am-circle" ng-src="{{son.image_url}}" ui-sref="customers.detail({uuid:comment.customer_uuid})" />-->
+                                <!--<span class="text">{{son.remark}}</span>-->
+                                <!--<div class="content"> {{son.content}}</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="add-comment">
+            <lable>{{reply.father_name ? '@'+reply.father_name : '评论：'}}</lable>
+            <input type="text" data-ng-model="reply.content" />
+            <i class="icon uk-icon-reply" ng-click="addComment(mood)"></i>
+        </div>
+
+    </div>
+
+</div>

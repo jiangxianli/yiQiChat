@@ -1,0 +1,79 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-user icon"  ui-sref="friends"></a>
+    </div>
+    <div class="center">新朋友</div>
+    <div class="right">
+        <a class="uk-icon-eye icon"></a>
+    </div>
+</div>
+<div class="content">
+
+    <div class="friends">
+
+        <div class="search">
+            <i class="icon uk-icon-search"></i>
+            <input type="text" placeholder="输入手机号、昵称搜索" data-ng-model="query">
+            <div class="drop-menu" ng-show="query" ng-click="search()">
+                <span>搜索：</span>
+                <em>{{query}}</em>
+            </div>
+        </div>
+
+        <div class="sort-by apply" ng-if="findCustomers.length">
+            <h4>查找的结果</h4>
+            <ul>
+                <li data-ng-repeat="customer in findCustomers">
+                    <div class="item">
+
+                        <img src="/assets/images/touxiang.png">
+                        <div class="name">
+                            <span>{{customer.mobile}}</span>
+                            <em>请求加好友</em>
+                        </div>
+
+                        <button ng-click="apply(customer.easemob_username)">添加</button>
+                    </div>
+                </li>
+                <!--<li>-->
+                <!--<div class="item">-->
+
+                <!--<img src="/assets/images/touxiang.png">-->
+                <!--<span>Grace</span>-->
+                <!--</div>-->
+                <!--</li>-->
+            </ul>
+
+        </div>
+
+        <div class="sort-by apply" ng-show="applyList.length">
+            <h4>新朋友</h4>
+            <ul>
+                <li data-ng-repeat="friend in applyList">
+                    <div class="item">
+
+                        <img src="/assets/images/touxiang.png">
+                        <div class="name">
+                            <span>{{friend.from.mobile}}</span>
+                            <em>申请加为好友</em>
+                        </div>
+
+                        <button ng-click="subscribed(friend.from.easemob_username)" ng-if="friend.is_received == 0" class="receive_btn">接受</button>
+                        <button  ng-if="friend.is_received == 1" class="received_btn">已接受</button>
+                    </div>
+                </li>
+                <!--<li>-->
+                    <!--<div class="item">-->
+
+                        <!--<img src="/assets/images/touxiang.png">-->
+                        <!--<span>Grace</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>

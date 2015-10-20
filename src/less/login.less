@@ -1,0 +1,257 @@
+html,body{
+  min-width: 320px;
+  max-width: 640px;
+  margin:0 auto;
+  background: #EBEBEB;
+}
+html,body,.main-wrapper{
+  width: 100%;
+  height:100%;
+  font-size:1em ;
+}
+
+@media screen and (max-height: 410px) {
+
+  .footer{
+    a.more{
+      display: none;
+    }
+  }
+
+}
+.main-wrapper{
+  .over-layer{
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: absolute;
+    background: #000000;
+    filter:alpha(opacity=85); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.85; /*Firefox私有，透明度50%*/
+    opacity:0.85;/*其他，透明度50%*/
+  }
+  .login-wrapper{
+    width:100%;
+    height:100%;
+    //    background:url('../assets/images/login_bg.png') no-repeat center center;
+    position: relative;
+
+    .logo{
+
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      font-size:1.3em;
+      top:20%;
+      i{
+        font-size:2.3em;
+        display: block;
+        margin:0 auto;
+        color:#50cc96;
+      }
+      span{
+        color:#f9f9f9;
+      }
+
+    }
+
+    .btn-group{
+
+      max-width: 640px;
+      width: 80%;
+      padding-top:40%;
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      margin-left:-40%;
+      margin-top:-200px;
+      z-index: 10;
+
+      .login-btn{
+        background: #50cc96;
+        border:1px solid #50cc96;
+        border-radius: 5px;
+        color:#ffffff;
+      }
+      .register-btn{
+        background: #ffffff;
+        border:1px solid #ffffff;
+        border-radius: 5px;
+        color:#50cc96;
+        margin-top:2em;
+      }
+
+    }
+
+    .version{
+      font-size:0.8em;
+      position: absolute;
+      width:100%;
+      bottom: 2em;
+      text-align: center;
+      color:#f9f9f9;
+    }
+
+
+    .header{
+      width:100%;
+      background: #50cc96;
+      color:#ffffff;
+      height:3em;
+      line-height: 3em;
+      .left{
+        width: 4em;
+        height: 100%;
+        display: inline-block;
+        .icon{
+          font-size:1.8em;
+          margin-left: 0.4em;
+        }
+        a{
+          color:#ffffff;
+          text-decoration: none;
+          &:hover{
+            color: #ffffff;
+          }
+        }
+      }
+      .center{
+        width:14em;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+
+    .content{
+
+      .form-group{
+
+        position: relative;
+        height:2em;
+        line-height: 2em;
+        margin-bottom: 2em;
+
+        &:focus{
+          .input-icon{
+            color:#4ec326;
+          }
+          border-bottom: 1px solid #4bc221;
+        }
+
+        .input-icon{
+          position: absolute;
+          left:0;
+          bottom: 0.05em;
+          font-size:2em;
+        }
+
+        input[type=text],input[type=password]{
+          margin-left: 2em;
+          border:0;
+          font-size:1.2em;
+          color:#bbbbbb;
+          background: none;
+          &:focus{
+            border:0;
+          }
+          width:85%;
+        }
+        border-bottom: 1px solid #bbbbbb;
+
+      }
+      .login-form{
+
+        width: 80%;
+        margin: 2em auto 0 auto;
+
+        .input-icon{
+
+          color:#bbbbbb;
+
+          &.uk-icon-user{
+            font-size:1.8em;
+          }
+
+        }
+
+        .login-btn{
+          background: #45c01a;
+          border:1px solid #45c01a;
+          border-radius: 5px;
+          color:#ffffff;
+          &:disabled{
+            background: #999999;
+            border:1px solid #d7d7d7;
+          }
+        }
+
+        .logo{
+
+          position: relative;
+          text-align: center;
+          margin:2em auto;
+          span{
+            color:#333333;
+          }
+
+        }
+
+
+      }
+
+    }
+
+    .footer{
+      width:100%;
+      position: absolute;
+      bottom: 1em;
+      text-align: center;
+      a.more{
+        text-decoration: none;
+        color: #576b95;
+      }
+    }
+
+  }
+
+}
+
+.browser{
+  width:18em;
+  top:15%;
+  margin-left: -9em;
+  position: fixed;
+  left:50%;
+  .title{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:auto;
+    text-align: center;
+    font-size:1.2em;
+    .logo-img{
+      width:100%;
+      height: 2em;
+      margin:0;
+      padding:0;
+      text-align: center;
+      .icon{
+        color:#75B82B;
+        font-size:1.6em;
+      }
+    }
+    span.text{
+      width:100%;
+      display: inline-block;
+    }
+  }
+  .qr-code{
+
+    width:12em;
+    height:12em;
+    margin:0 auto;
+  }
+}
+
+

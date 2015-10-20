@@ -1,0 +1,23 @@
+<div class="header">
+    <div class="left">
+        <a class="uk-icon-angle-left icon"  href="javascript:history.back(-1)"></a>
+    </div>
+    <div class="center">设置备注</div>
+    <div class="right">
+        <button class="update-btn" ng-click="setRemark()">确定</button>
+    </div>
+</div>
+<div class="content ">
+
+    <div class="profile-detail">
+
+        <div class="form-control">
+            <span class="tip">备注名</span>
+            <input class="text" placeholder="" data-ng-model="friend.remark">
+        </div>
+
+
+    </div>
+</div>
+
+<div ng-include src="'app/customer/views/footer.html'"></div>
