@@ -15,9 +15,6 @@
         'ngFileUpload',
         'as.sortable',
         'satellizer',
-        'angular-redactor',
-        'chart.js',
-        'LocalStorageModule',
         'geolocation',
         'angularFileUpload'
     ]);
