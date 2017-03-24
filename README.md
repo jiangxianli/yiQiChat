@@ -2,7 +2,7 @@
     基于AngularJS，环信通信的Web即时聊天工具
 # 知识储备
     node、npm、bower、gulp、less、angularJS
-#安装
+# 安装
     1. 安装node ,安装完使用node -v 检查是否安装成功
     2. node 安装完成后，使用npm -v 检查是否可以使用npm
     3. npm install --global bower
@@ -10,11 +10,11 @@
     5. npm install
     6. gulp serve,启动本地serve,如遇到 module 'xxx' not found 则 使用npm install xxx 来安装
 
-#gulp 命令
+# gulp 命令
     gulp clean  清理档案 //dist .tmp  文件夹被清理掉    
     gulp build  文件打包 //打包 到dist文件夹
 
-#项目结构
+# 项目结构
 
     ├── README.md   
     ├── bower.json  
@@ -88,16 +88,21 @@
             ├── login.less      
             └── zone.less       
 
-#功能简介
-##1.即时消息
+# 功能简介
+## 1.即时消息
     基于环信即时云通信，可以进行实时消息通信
-##2.我的好友
+## 2.我的好友
     可以通过查找加好友
-##3.附近的人
+## 3.附近的人
     通过地理定位功能，查找附近的人，并显示距离范围
-##4.心情广场
+## 4.心情广场
     可以发布自己的即时心情，进入广场的人即可看到你的动态
-##5.个人设置
+## 5.个人设置
     可以设置自己的头像及个人资料等
-#项目试玩
+# 项目试玩
 [一起聊](http://chat.jiangxianli.com)
+
+## 相关
+- [yiQiChat后端项目](https://github.com/jiangxianli/yiQiChatApi)
+
+> 喜欢️请 :star2:  !, 尽量不要fork !
