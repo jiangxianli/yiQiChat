@@ -320,8 +320,6 @@
 
                     $rootScope.getTotalUnreadMsgNum();
 
-                    $rootScope.setLocation(function(){ },function(){ });
-
                 }
 
                 //路由中access=true的不需要检查是否已登录

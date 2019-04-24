@@ -2,7 +2,7 @@
     'use strict';
     angular.module('yiqichat')
         //用户登录
-        .controller('UserController@login', function ($scope, $log, UserService, $state, Notification, $auth,EasemobUtil,Customer) {
+        .controller('UserController@login', function ($scope, $log, UserService, $state, Notification, $auth,EasemobUtil,Customer,$rootScope) {
             //登录按钮点击状态
             $scope.clicked = false;
 
@@ -24,6 +24,8 @@
                     EasemobUtil.login(data.easemob_username, data.easemob_password);
 
                     UserService.setUser(data);
+
+                    $rootScope.setLocation(function(){ },function(){ });
 
                 },function(){
                     $scope.clicked = false;
