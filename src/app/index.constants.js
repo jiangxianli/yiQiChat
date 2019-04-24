@@ -13,7 +13,7 @@
         })
         .constant('env', {
 
-            baseUrl: 'http://test.chat.jiangxianli.com/api',
+            baseUrl: 'http://yiqichat.api.jiangxianli.com/api',
             templatePath: 'app'
         });
 })();

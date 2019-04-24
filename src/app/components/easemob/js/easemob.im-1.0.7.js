@@ -2068,7 +2068,7 @@ connection.prototype.listRooms = function(options) {
         var rooms = [];
         rooms = parseRoomFn(result);
         suc(rooms);
-    }
+    };
     var err =  options.error || emptyFn;
     var errorFn = function (ele){
         err({
@@ -2076,7 +2076,7 @@ connection.prototype.listRooms = function(options) {
             msg : '获取群组列表失败',
             data : ele
         });
-    }
+    };
     this.context.stropheConn.sendIQ(iq.tree(), completeFn, errorFn);
 };
 
@@ -2105,7 +2105,7 @@ connection.prototype.queryRoomMember = function(options){
             }
         }
         suc(members);
-    }
+    };
     var err =  options.error || emptyFn;
     var errorFn = function (ele){
         err({
@@ -2113,7 +2113,7 @@ connection.prototype.queryRoomMember = function(options){
             msg : '获取群组成员列表失败',
             data : ele
         });
-    }
+    };
     this.context.stropheConn.sendIQ(iq.tree(), completeFn, errorFn);
 };
 
@@ -2142,7 +2142,7 @@ connection.prototype.queryRoomInfo = function(options){
             }
         }
         suc(members);
-    }
+    };
     var err =  options.error || emptyFn;
     var errorFn = function (ele){
         err({
@@ -2150,7 +2150,7 @@ connection.prototype.queryRoomInfo = function(options){
             msg : '获取群组信息失败',
             data : ele
         });
-    }
+    };
     this.context.stropheConn.sendIQ(iq.tree(), completeFn, errorFn);
 };
 
@@ -2168,7 +2168,7 @@ connection.prototype.queryRoomOccupants = function(options) {
             msg : '获取群组出席者列表失败',
             data : ele
         });
-    }
+    };
     var attrs = {
       xmlns: Strophe.NS.DISCO_ITEMS
     };

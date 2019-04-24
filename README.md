@@ -6,7 +6,7 @@
     1. 安装node ,安装完使用node -v 检查是否安装成功
     2. node 安装完成后，使用npm -v 检查是否可以使用npm
     3. npm install --global bower
-    4. npm install --global npm
+    4. npm install --global gulp
     5. npm install
     6. gulp serve,启动本地serve,如遇到 module 'xxx' not found 则 使用npm install xxx 来安装
 
@@ -99,8 +99,10 @@
     可以发布自己的即时心情，进入广场的人即可看到你的动态
 ## 5.个人设置
     可以设置自己的头像及个人资料等
-# 项目试玩
-[一起聊](http://chat.jiangxianli.com)
+# 项目试玩 [扫码进入]
+[一起聊](http://yi-qi-chat.jiangxianli.com)
+![一起聊](二维码.png)
+
 
 ## 相关
 - [yiQiChat后端项目](https://github.com/jiangxianli/yiQiChatApi)
