@@ -8,8 +8,12 @@
                 .state('messages', {
                     parent: 'main',
                     url: '/messages',
-                    controller: 'MessageController@list',
-                    templateUrl: 'app/messages/views/list.html',
+                    views: {
+                        '@main': {
+                            controller: 'MessageController@list',
+                            templateUrl: 'app/messages/views/list.html'
+                        }
+                    },
                     access: false
                 })
                 .state('messages.detail', {
