@@ -13,7 +13,7 @@
 
         <div class="item" data-ng-repeat="mood in moods">
 
-            <div class="top-block" ui-sref="customers.detail({uuid:mood.customer_uuid})" >
+            <div class="top-block" ui-sref="moods.detail({uuid:mood.u_num})" >
                 <img ng-src="{{mood.image_url}}" />
                 <span>{{mood.customer_name}}</span>
                 <span class="icon"></span>
