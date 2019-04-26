@@ -3,7 +3,7 @@
     angular.module('yiqichat')
 
         //消息列表
-        .controller('MessageController@list', function ($scope,EasemobUtil,localStorageService,Message,UserService,$state,$rootScope) {
+        .controller('MessageController@list', function ($scope,EasemobUtil,Message,UserService,$state,$rootScope) {
 
             $scope.state = $state;
 
