@@ -8,36 +8,28 @@
             var modal = UIkit.modal(".loadingModal");
 
             $scope.tipInfo = '朋友列表加载中...';
-
             $scope.friends = [];
 
             getFriends();
 
             //获取朋友列表
             function getFriends(){
-
                 //开启模态提示
                 modal.show();
 
                 Friend.list().then(function(data){
 
                     $scope.friends = data;
-
-                    if(data.length <= 0){
-
+                    if (data.length <= 0) {
                         $scope.tipInfo = '您还没有朋友，到附近加一个吧！';
-                        setTimeout(function(){
+                        setTimeout(function () {
                             modal.hide();
-                        },2500);
-
-                    }else{
+                        }, 1000);
+                    } else {
                         modal.hide();
                     }
-
                 });
             }
-
-
         })
 
         //添加朋友
