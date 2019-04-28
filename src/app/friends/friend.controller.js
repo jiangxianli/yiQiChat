@@ -53,14 +53,10 @@
                 Friend.search(params).then(function(data){
 
                     $scope.query = '';
-                    if(!data.mobile){
-
+                    if(!data.uuid){
                         Notification.error('未查询到符合条件的用户')
-
                     }else{
-
                         $state.go("customers.detail",{uuid:data.uuid});
-
                     }
 
                 });
