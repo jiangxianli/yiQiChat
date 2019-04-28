@@ -12,7 +12,7 @@
 
     <div class="message-detail">
         <ul>
-            <li class="time">7月20号 17:20</li>
+            <!--<li class="time">{{ msg.created_at }}</li>-->
             <li class="{{msg.from == friend.id ? 'other':'owner'}}" data-ng-repeat="msg in messages">
                 <div class="item">
                     <img ng-src="{{ msg.from_img_url}}" />
